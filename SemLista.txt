@@ -1,0 +1,45 @@
+numeros = []
+ 
+print("Escolha uma das opcoes:")
+print(" 1 : Incluir um número no vetor.\n",
+      "2 : Consultar todos os números do vetor.\n",
+      "3 : Consultar um número do vetor.\n",
+      "4 : Excluir um número no vetor.\n",
+      "5 : Esvaziar o vetor.\n", 
+      "6 : Sair.",
+)
+
+comf = True
+
+while(comf == True):
+ opcao = int(input("Qual opçao deseja:"))
+
+ if(opcao == 1):
+  a = int(input("Qual é o valor que deseja inserir:"))
+  numeros.append(a)
+  print(numeros)
+
+ if(opcao == 2):
+  print(numeros)
+
+ if(opcao == 3):
+  b = int(input("Qual é o valor que deseja pesquisar:"))
+  if(b in numeros):
+   print("Esse numero está na lista")
+   ind = numeros.index(b)
+   print("Está na posição",ind +1)
+  else:
+   print("Esse numero não está na lista")
+
+ if(opcao == 4):
+  c = int(input("Qual é o valor que deseja inserir:"))
+  numeros.remove(c)
+  print(numeros)
+
+ if(opcao == 5):
+  numeros.clear()
+  print("Tudo Limpo")
+
+ if(opcao == 6):
+  print("Obrigado, tenha um bom dia.")
+  comf = False

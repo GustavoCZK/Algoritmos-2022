@@ -1,0 +1,6 @@
+custo = float( input("Informe o custo de fábrica:\n ")  )
+
+distribuidor = custo * 0.28
+imposto=custo * 0.45
+total=custo+distribuidor+imposto
+print(total)

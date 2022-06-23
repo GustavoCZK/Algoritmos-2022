@@ -1,0 +1,12 @@
+M = [0,0,0,0]
+for i in range(4):
+     M[i]= float(input("Digite Um Número:"))
+
+maior = max(M)
+
+R = [0,0,0,0]
+for i in range(4):
+    R[i] = maior * M[i]
+
+print("O Maior Numero é:",maior)
+print("Números Multiplicados:\n",R)

@@ -1,0 +1,81 @@
+from random import randint
+
+def preencher_valores(gabarito,valor,repeticoes):  
+  for i in range(repeticoes):    
+    preenchido = True
+    while(preenchido == True):
+      x = randint(0,7)
+      y = randint(0,7)      
+      if (gabarito[x][y] == 0):
+        gabarito[x][y] = valor
+        preenchido = False
+  return gabarito
+
+gabarito = []
+
+for i in range(8):  
+    gabarito.append([0]*8)
+  
+gabarito = preencher_valores(gabarito, 100, 1)
+
+gabarito = preencher_valores(gabarito,-100, 1)
+
+gabarito = preencher_valores(gabarito, 50, 3)
+
+gabarito = preencher_valores(gabarito, -50, 4)
+
+gabarito = preencher_valores(gabarito, 25, 4)
+
+gabarito = preencher_valores(gabarito, -25, 5)
+
+gabarito = preencher_valores(gabarito, 20, 6)
+
+gabarito = preencher_valores(gabarito, -20, 7)
+
+gabarito = preencher_valores(gabarito, 10, 8)
+
+gabarito = preencher_valores(gabarito, -10, 9)
+
+vida_j1 = 0
+vida_j2 = 0
+
+for i in range(1):
+  JOGADOR_1 = input("Olá, Jogador digite seu usuário para iniciar")
+  JOGADOR_2 = input("Olá, Jogador 2 digite seu usuário para iniciar")
+
+for i in range(5):
+  print("Jogada ", i)
+  print(JOGADOR_1,"")
+  deu = False
+  while(deu == False):
+    x_1 = int(input("Digite um valor entre 0,7 "))
+    y_1 = int(input("Digite um valor entre 0,7 "))
+    if (gabarito[x_1][y_1] == 'X'):
+      print('Nada aqui, jogue novamente')
+      deu = False
+    else: 
+      print([x_1, y_1])  
+      vida_j1 = vida_j1 + gabarito[x_1][y_1]
+      gabarito[x_1][y_1] = "X"
+      print(vida_j1)
+      deu = True
+  
+  print(JOGADOR_2,"")
+  deu = False
+  while(deu == False):    
+    x_2 = int(input("Digite um valor entre 0,7 "))
+    y_2 = int(input("Digite um valor entre 0,7 "))
+    if (gabarito[x_2][y_2] == 'X'):    
+      print('Nada aqui, jogue novamente')
+      deu = False
+    else:  
+     print([x_2, y_2])
+     vida_j2 = vida_j2 + gabarito[x_2][y_2]
+     gabarito[x_2][y_2] = "X"
+     print(vida_j2)
+     deu = True
+
+if(vida_j2 > vida_j1):
+  print("VENCEDOR:",JOGADOR_2)
+if(vida_j1 > vida_j2):
+  print("VENCEDOR:",JOGADOR_1)

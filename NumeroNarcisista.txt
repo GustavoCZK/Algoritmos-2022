@@ -1,0 +1,15 @@
+numero = int(input("Digite um numero de 1 a 999: "))
+
+uni = int(numero / 100)
+dez = int((numero - uni * 100) / 10)
+cen = int((numero - uni * 100) - (dez * 10))
+
+print(uni,dez,cen)
+
+narfo = (uni ** 3) + (dez ** 3) + (cen ** 3)
+
+if(numero == narfo):
+  print("O numero",numero, "é Narcisista Classico!")
+
+else:
+  print("O numero", numero, "Não é Narcisista Classico:")

@@ -1,0 +1,67 @@
+comp = int(input("Qual o comprimento é o Navio?"))
+larg = int(input("Qual é a largura do Navio?"))
+
+cn = comp / 10
+ln = larg / 2
+
+tri = True
+
+profundidade = 10
+
+quantidade_areia = 0
+quantidade_rebocadores = 0
+
+quantidade_areia_suficiente = False
+quantidade_rebocadores_suficiente = False
+
+navio_encalhado = True
+
+while navio_encalhado == True:
+  while quantidade_areia_suficiente == False:
+    resposta = input('Você deseja retirar mais 10 metros de areia?')
+    if(quantidade_areia == (cn * 10)):
+      print("Foi Retirada a quantidade certa de areia!")
+      break
+    if(resposta == 's'):
+      quantidade_areia += 10
+    elif(resposta == 'n'):
+      quantidade_areia_suficiente = True
+      break
+
+  while quantidade_rebocadores_suficiente == False:
+     resposta = input('Você deseja trazer mais um rebocador?')
+     if(quantidade_rebocadores == (ln * 2)):
+        print("É Força Certa para o trabalho!")
+        break
+     if(resposta == 's'):
+        quantidade_rebocadores += 1
+     elif(resposta == 'n'):
+        quantidade_rebocadores_suficiente = True
+        break
+
+  while(tri == True):
+      agua = input("Acho que ta muito raso!")
+      if(profundidade == 14):
+          print("Está na profundidade correta?")
+          break
+      if(agua == "s"):
+          profundidade += 1
+          print("Ta descendo!")
+
+      elif(agua == "n"):
+          print("Ta pronto para partir!")
+          break
+  print("Esta em,", profundidade,"metros sob a água.")
+
+  resposta = input('O navio foi desencalhado?')
+  
+  if(resposta == 's'):
+    navio_encalhado = False
+    break
+  elif(resposta == 'n'):
+    quantidade_areia_suficiente = False
+    quantidade_rebocadores_suficiente = False
+
+print('Foram tirados', quantidade_areia, "metros de areia.")
+print('Foram usados', quantidade_rebocadores,"rebocadores para o serviço")
+print('Parabéns Equipe o navio foi desencalhado!')

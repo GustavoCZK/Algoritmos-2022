@@ -1,0 +1,23 @@
+number = []
+
+for i in range(10):
+  linha = [0] * 20
+  number.append(linha)
+
+for i in range(10):
+  for j in range(20):
+    number[i][j] = int(input("Digite os Miliones de Numbers:"))
+
+print(number)
+
+matriz_m = []
+
+for i in range(10):
+  soma = sum(number[i])
+  print("Essa Foi a Soma Da %d Linha:"% (i+1) ,soma)
+  for j in range(20):
+   multi = soma * number[i][j]
+   matriz_m.append(multi)
+   print("Essa Foi a Multiplicação da %d Posição:"% (j+1),multi)
+
+print(matriz_m)

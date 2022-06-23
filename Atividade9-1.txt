@@ -1,0 +1,17 @@
+def primo(n):
+    for val in range(2,n):
+        if n % val == 0:
+            return False
+    return True
+
+numeros = [7,5,3,2,6,7,8,9,10]
+primos = []
+
+for numero in numeros:
+  if (primo(numero) == True):
+    primos.append(numero)
+
+for primo in primos:
+  print("O número ", primo, " é primo")
+  posicao = numeros.index(primo)
+  print("Ele está na posição ", posicao)

@@ -1,0 +1,9 @@
+nome = input("Olá meu caro colega me diga seu nome:")
+
+data = int(input("Qual a seu ano de nascimento:"))
+
+ano = 2022
+
+idade = ano - data 
+
+print("Olá",nome ,"você tem",idade, "anos.")

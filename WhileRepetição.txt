@@ -1,0 +1,8 @@
+conseguiu = False
+
+while (conseguiu == False):
+  conseguir = input("Conseguiu? ")
+  if (conseguir == "Não"):
+    conseguiu = False
+  else:
+    conseguiu = True

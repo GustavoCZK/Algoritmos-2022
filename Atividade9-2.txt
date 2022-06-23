@@ -1,0 +1,17 @@
+salario_vendedor = 545
+porcentagem = 5
+objetos = ["Copo","Faca","Tesoura","Bombril","PC","Mouse","Canivete","Coca","Pamonha","Polenta"]
+valor_unitario = []
+quantidade_vendida = []
+
+for objeto in objetos:
+  print("ITEM: ", objeto)
+  vlr = float(input("Qual o valor unitário?"))
+  valor_unitario.append(vlr)
+  qtd = int(input("Qtos foram vendidos"))
+  quantidade_vendida.append(qtd)
+
+print("RElatório")
+print("Objeto | Qtd | Vlr Unitário | Valor Total ")
+for i in (range(0,len(objetos))):
+  print(objetos[i], " | ", valor_unitario[i], " | ", quantidade_vendida[i], " | ", quantidade_vendida[i] * valor_unitario[i1])

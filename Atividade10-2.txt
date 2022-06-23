@@ -1,0 +1,34 @@
+notas = []
+for i in range(10):
+  linha = [0] * 3
+  notas.append(linha)
+
+for i in range(10):
+  for j in range(3):
+    notas[i][j] = float(input("Digite a Nota %d Do Aluno %d:"% (j+1,i+1)))
+
+for i in range (10):
+  print("Nota Aluno %d:"% (i+1),notas[i])
+
+#------------------------------------------------------------------------#
+
+p1 = 0
+p2 = 0
+p3 = 0
+
+for i in range(10):
+   menor = float(min(notas[i]))
+   print("Essa Foi a Menor Nota do Aluno %d:"% (i+1), menor)
+   print("O Aluno %d Teve a Menor Nota Na Posição:"% (i+1), resultado,'º')
+   resultado = int(notas[i].index(menor))
+   resultado += 1
+   if(resultado == 1):
+     p1 += 1
+   if(resultado == 2):
+     p2 += 1
+   if(resultado == 3):
+     p3 += 1
+
+print("Forão",p1 ,"Notas na Primeira Posição")
+print("Forão",p2 ,"Notas na Segunda Posição")
+print("Forão",p3 ,"Notas na Terceira Posição")

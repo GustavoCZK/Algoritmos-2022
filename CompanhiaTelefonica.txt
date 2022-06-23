@@ -1,0 +1,42 @@
+hora_inicio = int(input("Digite a hora de início"))
+minuto_inicio = int(input("Digite o minuto de início"))
+valor_minuto = 1
+
+hora_fim = int(input("Digite a hora de fim"))
+minuto_fim = int(input("Digite o minuto de fim"))
+
+
+final = hora_fim * 60 + minuto_fim
+inicio = hora_inicio * 60 + minuto_inicio
+
+diferenca_em_minutos = final - inicio
+
+print("A ligação durou {diferenca_em_minutos} minutos")
+
+desconto = 0
+if (hora_inicio >= 0 and hora_inicio <= 9):
+  if (hora_fim >= 0 and hora_fim <= 9): 
+    dif = final - inicio
+    print("Minutos com desconto: ", dif)
+    print("Valor cobrado: ", dif * (valor_minuto * 0.5))
+  else:
+    normal = final - 9 * 60
+    desc = 9 * 60 - inicio
+    print("Minutos com desconto", desc)
+    valor_desc = desc * (valor_minuto * 0.5)
+    print("Valor com desconto", valor_desc)
+    print("Valor sem desconto", normal)
+    print("Total da ligação", normal + valor_desc)
+elif (hora_inicio >9 and hora_inicio < 18):
+    dife=final-inicio
+    print("Valor cobrado: ",  dife * (valor_minuto))
+elif (hora_inicio >= 18 and hora_inicio < 21):
+  if (hora_fim >= 18 and hora_fim < 21): 
+    diferenca = final - inicio
+    print("Minutos com desconto: ", diferenca)
+    print("Valor cobrado: ", diferenca * (valor_minuto * 0.3))
+  
+else:
+   diferencas = final - inicio
+   print("Minutos com desconto: ", diferencas)
+   print("Valor cobrado: ", diferencas * (valor_minuto * 0.4))
